@@ -1,0 +1,95 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "LearnAwsCdkStack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "LearnAwsCdkStack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "LearnAwsCdkStack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "LearnAwsCdkStack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e9196ea393423828428515420262dd9b6868bb42d921be958bee31a4902528ea.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "LearnAwsCdkStack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "LearnAwsCdkStack.assets"
+      ],
+      "metadata": {
+        "/LearnAwsCdkStack/LearnAwsCdkQueue/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LearnAwsCdkQueueCB00CA75"
+          }
+        ],
+        "/LearnAwsCdkStack/LearnAwsCdkQueue/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LearnAwsCdkQueuePolicy487A2B2E"
+          }
+        ],
+        "/LearnAwsCdkStack/LearnAwsCdkQueue/LearnAwsCdkStackLearnAwsCdkTopic0ACA6016/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LearnAwsCdkQueueLearnAwsCdkStackLearnAwsCdkTopic0ACA601622FCE6FF"
+          }
+        ],
+        "/LearnAwsCdkStack/LearnAwsCdkTopic/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LearnAwsCdkTopic326002C3"
+          }
+        ],
+        "/LearnAwsCdkStack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/LearnAwsCdkStack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/LearnAwsCdkStack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/LearnAwsCdkStack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "LearnAwsCdkStack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
